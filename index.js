@@ -17,7 +17,7 @@ app.use(cors())
     //al usar expr..json el header(postman) debe ir: value:application/json 
 app.use(express.json({ extended: true }))
 
-const PORT = process.env.PORT || 5000; //app herocku/local port 
+const port = process.env.port || 5000; //app herocku/local port 
 
 // Definir Routing (temporal)
 // app.get('/',(req,res) =>{
@@ -31,8 +31,8 @@ app.use('/api/projects', require('./routes/projects'))
 app.use('/api/tasks', require('./routes/tasks')) 
 
 // run app  
-app.listen(PORT, () =>{
-    console.log(`Servidor Iniciado en el puerto ${PORT}`)
+app.listen(port,'0.0.0.0', () =>{
+    console.log(`Servidor Iniciado en el puerto ${port}`)
 })
 
 
